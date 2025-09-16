@@ -13,11 +13,14 @@ This application counts HTML elements on any given web page. It was built to dem
 
 ## Key Features
 
-- Element Detective: Finds and counts any HTML element you ask for
-- Speed Demon: Uses smart caching so you don't have to wait around
-- Stats Nerd: Shows you all sorts of interesting numbers about the page
-- Bouncer Mode: Keeps things fair with rate limiting (no party crashers allowed!)
-- Graceful AF: Handles errors like a champ - no ugly PHP errors here
+- Element Detection: Accurately identifies and counts any HTML element on a webpage
+- Performance Optimization: Implements smart caching mechanisms for faster response times
+- Comprehensive Statistics: Provides detailed analytics about page elements and structure
+- Rate Limiting: Implements request throttling to prevent abuse
+- Robust Error Handling: Comprehensive error management with user-friendly messages
+- Security Measures: Strict input validation and output sanitization
+- Efficient Processing: Optimized DOM parsing and database operations
+- Cross-Platform Compatibility: Fully responsive design for all device sizes
 - Security Guard: Blocks shady requests and keeps your data safe
 - Looks Good Everywhere: Works on your phone, tablet, or that old laptop in your closet
 
