@@ -1,0 +1,2 @@
+[2025-09-16 06:38:46] Error: Database error in storeResult: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'fetch_time_ms' cannot be null Context: {"domain":"www.aau.edu.et","url":"https:\/\/www.aau.edu.et\/","element":"img"}
+[2025-09-16 06:38:46] Error: General error: Failed to store result in database Context: {"ip":"::1","input":{"url":"https:\/\/www.aau.edu.et\/","element":"img"}}
