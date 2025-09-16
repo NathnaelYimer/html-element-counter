@@ -156,17 +156,35 @@ This project demonstrates my ability to develop a complete web application follo
 
 ### Example Usage
 
-1. Count all images on a page:
+Here are some real examples from testing on w3schools.com:
+
+1. Count all images:
    - URL: `https://www.w3schools.com`
    - Element: `img`
+   - Result: 21 images found
 
-2. Count all links on a page:
+2. Count all div elements:
    - URL: `https://www.w3schools.com`
-   - Element: `a`
+   - Element: `div`
+   - Result: 638 divs found
 
-3. Count all paragraphs on a page:
+3. Count all paragraphs:
    - URL: `https://www.w3schools.com`
    - Element: `p`
+   - Result: 42 paragraphs found
+
+4. Count all headings:
+   - URL: `https://www.w3schools.com`
+   - Element: `h1`
+   - Result: 14 h1 headings found
+   
+   - Element: `h2`
+   - Result: 61 h2 headings found
+
+5. Count other elements:
+   - `span`: 167 elements
+   - `li`: 11 list items
+   - `table`: 0 tables (as of testing)
 
 ### Tips
 - The system caches results for 5 minutes to improve performance
