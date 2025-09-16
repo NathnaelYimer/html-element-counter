@@ -1,20 +1,28 @@
 <?php
-// This class does the actual work of counting HTML elements on a page
-// It's like a digital detective that finds and counts tags for us
+/**
+ * ElementCounter class
+ * 
+ * Handles the core functionality of counting HTML elements on web pages.
+ * Provides methods for URL validation, content fetching, element counting,
+ * and result caching. Uses PDO for database operations and includes
+ * comprehensive error handling and input validation.
+ */
 
 require_once __DIR__ . '/../config/database.php';
 
 class ElementCounter {
     private $db;
-    // Cache results for 5 minutes to keep things speedy
+    private $cache_duration = 300; // 5 minutes in seconds
     
     public function __construct() {
         $this->db = Database::getInstance()->getConnection();
     }
     
-    // This is where the magic happens - takes a URL and an element, returns the count
+    /**
+     * Process a URL and element count request
+     */
     public function processRequest($url, $element) {
-        // Let's make sure we got good data to work with
+        // Validate inputs
         $validation = $this->validateInputs($url, $element);
         if (!$validation['valid']) {
             return ['success' => false, 'error' => $validation['error']];
@@ -23,7 +31,7 @@ class ElementCounter {
         $url = $validation['url'];
         $element = $validation['element'];
         
-        // Take the URL apart to understand what we're working with
+        // Parse URL components
         $parsed_url = parse_url($url);
         $domain = $parsed_url['host'];
         $path = isset($parsed_url['path']) ? $parsed_url['path'] : '/';
@@ -31,7 +39,7 @@ class ElementCounter {
             $path .= '?' . $parsed_url['query'];
         }
         
-        // See if we've counted this before and the result is still fresh
+        // Check cache first
         $cached_result = $this->getCachedResult($url, $element);
         if ($cached_result) {
             $stats = $this->getStatistics($domain, $element);
@@ -43,15 +51,16 @@ class ElementCounter {
             ];
         }
         
-        // If we're here, we need to fetch the page and count elements from scratch
+        // Fetch and process the URL
         $fetch_result = $this->fetchUrl($url);
         if (!$fetch_result['success']) {
             return ['success' => false, 'error' => $fetch_result['error']];
         }
-        // Now that we have the HTML content, let's count how many times our element appears
+        
+        // Count elements in HTML
         $element_count = $this->countElements($fetch_result['content'], $element);
         
-        // Save the results so we don't have to count again next time
+        // Store result in database
         $store_result = $this->storeResult(
             $domain, 
             $path, 
@@ -237,7 +246,7 @@ class ElementCounter {
                 return ['success' => false, 'error' => 'Server error (500). The website is experiencing technical difficulties.'];
             }
             
-            return ['success' => false, 'error' => 'Hmm, we couldn\'t fetch that page. Is the URL correct?'];
+            return ['success' => false, 'error' => 'Failed to fetch URL: ' . $this->sanitizeErrorMessage($error_message)];
         }
         
         // Check HTTP status code
@@ -268,7 +277,7 @@ class ElementCounter {
             return ['success' => false, 'error' => 'The website returned empty content.'];
         }
         
-        // Let's use PHP's built-in DOM parser to count elements
+        // Check if content is actually HTML
         $html_lower = strtolower($html);
         
         // If we got a very small response, it might be an error page or CAPTCHA
@@ -332,9 +341,9 @@ class ElementCounter {
      */
     private function countElements($html, $element) {
         try {
-           // Set up our HTML parser();
+            $dom = new DOMDocument();
             
-            // Ignore any HTML5 validation errorsnings for malformed HTML
+            // Suppress warnings for malformed HTML
             $old_setting = libxml_use_internal_errors(true);
             libxml_clear_errors();
             
@@ -359,7 +368,7 @@ class ElementCounter {
                 return $this->countElementsWithRegex($html, $element);
             }
             
-            // Don't show XML parsing errors to users
+            // Clear any libxml errors
             libxml_clear_errors();
             libxml_use_internal_errors($old_setting);
             
