@@ -172,12 +172,13 @@ This project demonstrates my ability to develop a complete web application follo
 - The system caches results for 5 minutes to improve performance
 - If a website is not responding, check if the URL is correct and the site is accessible
 - Some websites may block automated requests
+- For a complete reference of HTML elements, visit [W3Schools HTML Element Reference](https://www.w3schools.com)
 
 ### Real-World Example
 
 Let's say you want to know how many images are on example.com:
 
-1. Enter: `https://example.com`
+1. Enter: `https://www.w3schools.com`
 2. Type: `img`
 3. Click "Count Elements"
 
@@ -271,13 +272,6 @@ If you want to get all technical and use this in your own projects, here's how t
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
 ## Development
-
-### Testing
-
-Run the test suite:
-```bash
-php test/test-api.php
-```
 
 ### Debugging
 
