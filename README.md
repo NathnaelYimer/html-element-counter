@@ -133,7 +133,7 @@ This project demonstrates my ability to develop a complete web application follo
 ### Using the Web Interface
 
 1. Enter a Website URL: 
-   - Type or paste the full URL of the webpage you want to analyze (e.g., `https://www.example.com`)
+   - Type or paste the full URL of the webpage you want to analyze (e.g., `https://www.w3schools.com`)
    - The URL should include the protocol (http:// or https://)
 
 2. Enter an HTML Element to Count:
@@ -157,15 +157,15 @@ This project demonstrates my ability to develop a complete web application follo
 ### Example Usage
 
 1. Count all images on a page:
-   - URL: `https://www.example.com`
+   - URL: `https://www.w3schools.com`
    - Element: `img`
 
 2. Count all links on a page:
-   - URL: `https://www.example.com`
+   - URL: `https://www.w3schools.com`
    - Element: `a`
 
 3. Count all paragraphs on a page:
-   - URL: `https://www.example.com`
+   - URL: `https://www.w3schools.com`
    - Element: `p`
 
 ### Tips
@@ -176,7 +176,7 @@ This project demonstrates my ability to develop a complete web application follo
 
 ### Real-World Example
 
-Let's say you want to know how many images are on example.com:
+Let's say you want to know how many images are on https://www.w3schools.com:
 
 1. Enter: `https://www.w3schools.com`
 2. Type: `img`
@@ -195,7 +195,7 @@ If you want to get all technical and use this in your own projects, here's how t
 **Request Body**:
 ```json
 {
-  "url": "https://example.com",
+  "url": "https://www.w3schools.com",
   "element": "img"
 }
 ```
@@ -206,7 +206,7 @@ If you want to get all technical and use this in your own projects, here's how t
   "success": true,
   "cached": false,
   "result": {
-    "url": "https://example.com",
+    "url": "https://www.w3schools.com",
     "element": "img",
     "count": 5,
     "fetch_time": 250,
@@ -227,7 +227,9 @@ If you want to get all technical and use this in your own projects, here's how t
   "success": false,
   "error": "Invalid URL format"
 }
+
 ```
+
 
 ## Database Schema
 
