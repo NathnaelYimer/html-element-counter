@@ -1,11 +1,6 @@
 <?php
 /**
- * ElementCounter class
- * 
- * Handles the core functionality of counting HTML elements on web pages.
- * Provides methods for URL validation, content fetching, element counting,
- * and result caching. Uses PDO for database operations and includes
- * comprehensive error handling and input validation.
+ * Main class for HTML Element Counter functionality
  */
 
 require_once __DIR__ . '/../config/database.php';

@@ -125,14 +125,6 @@ This project was developed as part of the Colnect developer application process.
 
 This project demonstrates my ability to develop a complete web application following modern development practices. The code is well-documented and includes comprehensive error handling and security measures.
 
-## Credits
-
-- The PHP community for keeping the dream alive
-- Stack Overflow for saving my bacon more times than I can count
-- Coffee, for being the real MVP
-
-This project was built with care and attention to detail. Thank you for your interest in this project.
-
 ## How to Use
 
 ### Using the Web Interface
