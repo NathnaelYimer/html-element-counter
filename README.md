@@ -1,6 +1,6 @@
-# 🧪 HTML Element Counter - Colnect Developer Test Project
+# HTML Element Counter - Colnect Developer Test Project
 
-> **Note**: This is a test project created as part of the Colnect developer application process. It demonstrates web development skills including PHP, MySQL, JavaScript, and security best practices.
+This is a test project created as part of the Colnect developer application process. It demonstrates web development skills including PHP, MySQL, JavaScript, and security best practices.
 
 ## Project Overview
 This application counts HTML elements on any given web page. It was built to demonstrate:
@@ -11,24 +11,24 @@ This application counts HTML elements on any given web page. It was built to dem
 - Input validation and security measures
 - Performance optimization
 
-## 🛠️ Key Features Implemented
+## Key Features
 
-- **Element Detective**: Finds and counts any HTML element you ask for
-- **Speed Demon**: Uses smart caching so you don't have to wait around
-- **Stats Nerd**: Shows you all sorts of interesting numbers about the page
-- **Bouncer Mode**: Keeps things fair with rate limiting (no party crashers allowed!)
-- **Graceful AF**: Handles errors like a champ - no ugly PHP errors here
-- **Security Guard**: Blocks shady requests and keeps your data safe
-- **Looks Good Everywhere**: Works on your phone, tablet, or that old laptop in your closet
+- Element Detective: Finds and counts any HTML element you ask for
+- Speed Demon: Uses smart caching so you don't have to wait around
+- Stats Nerd: Shows you all sorts of interesting numbers about the page
+- Bouncer Mode: Keeps things fair with rate limiting (no party crashers allowed!)
+- Graceful AF: Handles errors like a champ - no ugly PHP errors here
+- Security Guard: Blocks shady requests and keeps your data safe
+- Looks Good Everywhere: Works on your phone, tablet, or that old laptop in your closet
 
 ## Technology Stack
 
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript (ES6+)
-- **Backend**: PHP 7.4+
-- **Database**: MySQL 5.7+
-- **Architecture**: RESTful API with AJAX
+- Frontend: HTML5, CSS3, Vanilla JavaScript (ES6+)
+- Backend: PHP 7.4+
+- Database: MySQL 5.7+
+- Architecture: RESTful API with AJAX
 
-## 🚀 Quick Start Guide
+## Quick Start Guide
 
 ### Prerequisites
 
@@ -93,20 +93,20 @@ chmod 755 logs  # Linux/Mac
 4. Click "Count Elements"
 
 ### Troubleshooting
-- **Database Connection Issues**:
+- Database Connection Issues:
   - Verify MySQL is running in XAMPP
   - Double-check database credentials in `config/database.php`
   - Ensure the database and user exist in phpMyAdmin
 
-- **Permission Issues**:
+- Permission Issues:
   - Make sure the `logs` directory is writable
   - Check web server user has proper permissions
 
-- **Page Not Found**:
+- Page Not Found:
   - Verify mod_rewrite is enabled in Apache
   - Check `.htaccess` file exists and is properly configured
 
-## 📝 Project Requirements (Colnect Test Task)
+## Project Requirements (Colnect Test Task)
 
 This project was developed as part of the Colnect developer application process. The requirements included:
 
@@ -118,29 +118,65 @@ This project was developed as part of the Colnect developer application process.
 - Support both web interface and API access
 
 ### Technical Implementation
-- **No frameworks** - Built with vanilla PHP, MySQL, and JavaScript
-- **Security** - Input validation, XSS protection, rate limiting
-- **Performance** - Database optimization, caching
-- **Responsive Design** - Works on all device sizes
+- No frameworks - Built with vanilla PHP, MySQL, and JavaScript
+- Security - Input validation, XSS protection, rate limiting
+- Performance - Database optimization, caching
+- Responsive Design - Works on all device sizes
 
 This project demonstrates my ability to develop a complete web application following modern development practices. The code is well-documented and includes comprehensive error handling and security measures.
 
-## 🙏 Shoutouts
+## Credits
 
 - The PHP community for keeping the dream alive
 - Stack Overflow for saving my bacon more times than I can count
 - Coffee, for being the real MVP
 
-This project was built with love and probably too much caffeine. Thanks for checking it out! ❤️'s for you)
+This project was built with care and attention to detail. Thank you for your interest in this project.
 
-## 🚀 How to Use This Thing
+## How to Use
 
-1. **Paste a URL** - Any website will do (as long as it's public)
-2. **Pick an Element** - Try 'img' for images, 'a' for links, or go wild with 'div'
-3. **Hit That Button** - The big one that says "Count Elements"
-4. **Boom!** - Watch as it magically counts everything and shows you the results
+### Using the Web Interface
 
-Pro tip: Some sites block automated requests, so if it doesn't work, try a different site!
+1. Enter a Website URL: 
+   - Type or paste the full URL of the webpage you want to analyze (e.g., `https://www.example.com`)
+   - The URL should include the protocol (http:// or https://)
+
+2. Enter an HTML Element to Count:
+   - Type the HTML element you want to count (e.g., `img`, `div`, `p`, `a`)
+   - Only alphanumeric characters are allowed (a-z, A-Z, 0-9)
+   - Common elements to try: `img`, `div`, `p`, `a`, `h1`, `h2`, `span`, `ul`, `li`, `table`
+
+3. Click "Count Elements":
+   - The system will fetch the webpage and count the specified elements
+   - Results will be displayed below the form
+
+### Understanding the Results
+
+- Request Results: Shows the URL, fetch time, and element count
+- General Statistics: Displays information about previous requests
+  - Number of unique URLs from the same domain
+  - Average fetch time for the domain
+  - Total count of the element from this domain
+  - Global count of the element across all requests
+
+### Example Usage
+
+1. Count all images on a page:
+   - URL: `https://www.example.com`
+   - Element: `img`
+
+2. Count all links on a page:
+   - URL: `https://www.example.com`
+   - Element: `a`
+
+3. Count all paragraphs on a page:
+   - URL: `https://www.example.com`
+   - Element: `p`
+
+### Tips
+- The system caches results for 5 minutes to improve performance
+- If a website is not responding, check if the URL is correct and the site is accessible
+- Some websites may block automated requests
 
 ### Real-World Example
 
@@ -151,10 +187,10 @@ Let's say you want to know how many images are on example.com:
 3. Click "Count Elements"
 
 You'll see something like:
-> Found 12 `<img>` tags on example.com
-> (And a bunch of other cool stats)
 
-## 🤖 For the Nerds: API Docs
+Found 12 `<img>` tags on example.com
+
+## API Documentation
 
 If you want to get all technical and use this in your own projects, here's how the API works:
 
@@ -201,35 +237,35 @@ If you want to get all technical and use this in your own projects, here's how t
 
 ### Tables
 
-- **domains**: Stores unique domain names
-- **urls**: Stores unique URLs with domain relationships
-- **elements**: Stores HTML element names
-- **requests**: Stores all fetch requests and results
-- **rate_limits**: Tracks request rates per IP
+- domains: Stores unique domain names
+- urls: Stores unique URLs with domain relationships
+- elements: Stores HTML element names
+- requests: Stores all fetch requests and results
+- rate_limits: Tracks request rates per IP
 
 ### Relationships
 
-- `requests` → `domains` (many-to-one)
-- `requests` → `urls` (many-to-one)  
-- `requests` → `elements` (many-to-one)
-- `urls` → `domains` (many-to-one)
+- requests → domains (many-to-one)
+- requests → urls (many-to-one)  
+- requests → elements (many-to-one)
+- urls → domains (many-to-one)
 
 ## Security Features
 
-- **Input Validation**: Server and client-side validation
-- **Rate Limiting**: 100 requests/hour, 10 requests/minute per IP
-- **XSS Protection**: All inputs sanitized
-- **Private Network Blocking**: Prevents access to local/private IPs
-- **SQL Injection Prevention**: Prepared statements throughout
-- **Error Logging**: Comprehensive error tracking
+- Input Validation: Server and client-side validation
+- Rate Limiting: 100 requests/hour, 10 requests/minute per IP
+- XSS Protection: All inputs sanitized
+- Private Network Blocking: Prevents access to local/private IPs
+- SQL Injection Prevention: Prepared statements throughout
+- Error Logging: Comprehensive error tracking
 
 ## Performance Optimizations
 
-- **Database Indexing**: Optimized queries with proper indexes
-- **Caching**: 5-minute cache for identical requests
-- **Connection Pooling**: Singleton database connections
-- **Gzip Compression**: Reduced bandwidth usage
-- **Lazy Loading**: Efficient resource loading
+- Database Indexing: Optimized queries with proper indexes
+- Caching: 5-minute cache for identical requests
+- Connection Pooling: Singleton database connections
+- Gzip Compression: Reduced bandwidth usage
+- Lazy Loading: Efficient resource loading
 
 ## Browser Compatibility
 
@@ -301,6 +337,4 @@ Error logs are stored in `logs/error.log` and `logs/app.log`.
 - **Documentation**: 1 hour
 - **Total**: ~13 hours
 
-## ⚖️ Legal Stuff
 
-This project is licensed under the MIT License - which basically means you can do whatever you want with it, but don't blame me if something breaks. Full details are in the [LICENSE](LICENSE) file if you're into that sort of thing.
